@@ -28,7 +28,114 @@
             </nav>
 
             <main class="content">
-                
+                <section class="courses-section">
+                    <h2 class="section-title">Текущие курсы</h2>
+                    <div class="courses-grid">
+                        <div class="course-card">
+                            <h3>Математика</h3>
+                            <div class="progress-container">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 75%;"></div>
+                                </div>
+                                <span class="progress-text">75%</span>
+                            </div>
+                        </div>
+                        <div class="course-card">
+                            <h3>Программирование</h3>
+                            <div class="progress-container">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 60%;"></div>
+                                </div>
+                                <span class="progress-text">60%</span>
+                            </div>
+                        </div>
+                        <div class="course-card">
+                            <h3>Английский</h3>
+                            <div class="progress-container">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 85%;"></div>
+                                </div>
+                                <span class="progress-text">85%</span>
+                            </div>
+                        </div>
+                        <div class="course-card">
+                            <h3>Физика</h3>
+                            <div class="progress-container">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 45%;"></div>
+                                </div>
+                                <span class="progress-text">45%</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="diary-section">
+                    <h2 class="section-title">Пройденные темы</h2>
+                    <div class="diary-list" id="diaryList">
+                        <article class="diary-entry">
+                            <div class="entry-header">
+                                <span class="entry-date">17.10.2025</span>
+                                <span class="entry-status completed">Завершено</span>
+                            </div>
+                            <h3 class="entry-title">Интегралы и их применение</h3>
+                            <p class="entry-description">Решено 15 задач на вычисление определенных и неопределенных интегралов. Изучены свойства интегралов и методы интегрирования.</p>
+                        </article>
+
+                        <article class="diary-entry">
+                            <div class="entry-header">
+                                <span class="entry-date">15.10.2025</span>
+                                <span class="entry-status in-progress">В работе</span>
+                            </div>
+                            <h3 class="entry-title">Алгоритмы сортировки</h3>
+                            <p class="entry-description">Реализованы алгоритмы пузырьковой, быстрой и сортировки слиянием на Python. Написан тест для проверки корректности.</p>
+                        </article>
+
+                        <article class="diary-entry">
+                            <div class="entry-header">
+                                <span class="entry-date">12.10.2025</span>
+                                <span class="entry-status completed">Завершено</span>
+                            </div>
+                            <h3 class="entry-title">Present Perfect Tense</h3>
+                            <p class="entry-description">Пройдено 20 упражнений на времена Present Perfect и Present Perfect Continuous. Выполнен тест на 92 балла.</p>
+                        </article>
+
+                        <article class="diary-entry">
+                            <div class="entry-header">
+                                <span class="entry-date">10.10.2025</span>
+                                <span class="entry-status completed">✓ Завершено</span>
+                            </div>
+                            <h3 class="entry-title">Законы Ньютона</h3>
+                            <p class="entry-description">Решены задачи на применение трех законов Ньютона. Подготовлены чертежи силовых схем для 8 задач.</p>
+                        </article>
+                    </div>
+                </section>
+
+                <section class="form-section">
+                    <h2 class="section-title">Добавить новую запись</h2>
+                    <form class="diary-form" id="diaryForm">
+                        <div class="form-group">
+                            <label for="entryDate">Дата:</label>
+                            <input type="date" id="entryDate" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="entryTitle">Название темы:</label>
+                            <input type="text" id="entryTitle" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="entryDescription">Описание работы:</label>
+                            <textarea id="entryDescription" rows="3" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="entryStatus">Статус:</label>
+                            <select id="entryStatus" required>
+                                <option value="completed">✓ Завершено</option>
+                                <option value="in-progress">В работе</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn-primary">Добавить запись</button>
+                    </form>
+                </section>
             </main>
 
             <footer class="footer">

@@ -28,8 +28,114 @@
             </nav>
 
             <main class="content">
-                
+                <section class="projects-section">
+                    <div class="projects-header">
+                        <h2 class="section-title">Мои проекты</h2>
+                        <div class="filter-buttons">
+                            <button class="filter-btn active" data-filter="all">Все</button>
+                            <button class="filter-btn" data-filter="html">HTML/CSS</button>
+                            <button class="filter-btn" data-filter="js">JavaScript</button>
+                            <button class="filter-btn" data-filter="react">React</button>
+                            <button class="filter-btn" data-filter="other">Другое</button>
+                        </div>
+                    </div>
+
+                    <div class="projects-grid" id="projectsGrid">
+                        <article class="project-card" data-tech="html">
+                            <div class="project-image">
+                                <img src="../assets/project1.jpg" alt="Лендинг" loading="lazy">
+                            </div>
+                            <div class="project-info">
+                                <h3 class="project-title">Лендинг для IT-компании</h3>
+                                <p class="project-description">Адаптивный лендинг с анимациями и формами обратной связи.</p>
+                                <ul class="project-tech">
+                                    <li class="tech-tag html">HTML</li>
+                                    <li class="tech-tag css">CSS</li>
+                                </ul>
+                            </div>
+                        </article>
+
+                        <article class="project-card" data-tech="js">
+                            <div class="project-image">
+                                <img src="../assets/project2.jpg" alt="Калькулятор" loading="lazy">
+                            </div>
+                            <div class="project-info">
+                                <h3 class="project-title">Интерактивный калькулятор</h3>
+                                <p class="project-description">Калькулятор с поддержкой научных функций и историей вычислений.</p>
+                                <ul class="project-tech">
+                                    <li class="tech-tag js">JavaScript</li>
+                                    <li class="tech-tag html">HTML</li>
+                                </ul>
+                            </div>
+                        </article>
+
+                        <article class="project-card" data-tech="react">
+                            <div class="project-image">
+                                <img src="../assets/project3.jpg" alt="ToDo App" loading="lazy">
+                            </div>
+                            <div class="project-info">
+                                <h3 class="project-title">ToDo List App</h3>
+                                <p class="project-description">Приложение для управления задачами с локальным хранилищем.</p>
+                                <ul class="project-tech">
+                                    <li class="tech-tag react">React</li>
+                                    <li class="tech-tag css">CSS</li>
+                                </ul>
+                            </div>
+                        </article>
+
+                        <article class="project-card" data-tech="html">
+                            <div class="project-image">
+                                <img src="../assets/project4.jpg" alt="Портфолио" loading="lazy">
+                            </div>
+                            <div class="project-info">
+                                <h3 class="project-title">Персональное портфолио</h3>
+                                <p class="project-description">Современное портфолио с плавными переходами и анимациями.</p>
+                                <ul class="project-tech">
+                                    <li class="tech-tag html">HTML</li>
+                                    <li class="tech-tag css">CSS</li>
+                                </ul>
+                            </div>
+                        </article>
+
+                        <article class="project-card" data-tech="react">
+                            <div class="project-image">
+                                <img src="../assets/project5.jpg" alt="Weather App" loading="lazy">
+                            </div>
+                            <div class="project-info">
+                                <h3 class="project-title">Прогноз погоды</h3>
+                                <p class="project-description">Приложение для получения прогноза погоды по геолокации.</p>
+                                <ul class="project-tech">
+                                    <li class="tech-tag react">React</li>
+                                    <li class="tech-tag js">JavaScript</li>
+                                </ul>
+                            </div>
+                        </article>
+
+                        <article class="project-card" data-tech="other">
+                            <div class="project-image">
+                                <img src="../assets/project6.jpg" alt="WordPress" loading="lazy">
+                            </div>
+                            <div class="project-info">
+                                <h3 class="project-title">Корпоративный сайт на WordPress</h3>
+                                <p class="project-description">Полнофункциональный сайт с кастомной темой и плагинами.</p>
+                                <ul class="project-tech">
+                                    <li class="tech-tag other">WordPress</li>
+                                    <li class="tech-tag css">CSS</li>
+                                </ul>
+                            </div>
+                        </article>
+                    </div>
+                </section>
             </main>
+
+            <div class="modal" id="projectModal">
+                <div class="modal-content">
+                    <button class="modal-close" id="modalClose">&times;</button>
+                    <div class="modal-body" id="modalBody">
+                        
+                    </div>
+                </div>
+            </div>
 
             <footer class="footer">
                 <p>© 2024<a class="footer__link" href="pages/diary.html">Контакты</a></p>
