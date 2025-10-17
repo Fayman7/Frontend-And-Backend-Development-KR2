@@ -69,7 +69,6 @@ main.content { /* ИЗМЕНЕНИЕ: Заменили .content на main для
 }
 
 .horizontal-section {
-    display: flex;
     text-align: center;
     margin-bottom: 40px;
 }
@@ -128,6 +127,7 @@ main.content { /* ИЗМЕНЕНИЕ: Заменили .content на main для
 }
 
 .section__label {
+    display: flex;
     background: white; /* Белый фон карточки */
     padding: 25px; /* Внутренние отступы */
     margin: 20px 0; /* Вертикальные отступы */
