@@ -142,6 +142,7 @@ main.content { /* ИЗМЕНЕНИЕ: Заменили .content на main для
 }
 
 /* FOOTER */
+
 .footer {
     background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%); /* Темный градиентный фон */
     color: white; /* Белый цвет текста */
