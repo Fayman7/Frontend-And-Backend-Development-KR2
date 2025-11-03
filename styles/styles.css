@@ -79,9 +79,12 @@ body {
     transition: all 0.5s ease;
 }
 .my-projects__image {
+    max-width: 50%;
+    aspect-ratio: 1 / 1;
     object-fit: cover;
     border-radius: 20px;
     margin: 20px auto;
+    padding-left: 20px;
 }
 .page-link {
     padding: 10px 15px;
