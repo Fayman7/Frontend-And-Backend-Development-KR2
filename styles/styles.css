@@ -59,7 +59,7 @@ body {
     padding: 20px;
     background: #ffffff;
 }
-.about-me, .my-projects {
+.about-me, .my-projects, .languages, .contact-info {
     margin-bottom: 30px;
 }
 .my-projects__grid {
@@ -99,6 +99,36 @@ body {
 }
 .page-link:active {
     color: #ffffff;
+}
+.label-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 20px;
+}
+.label {
+    background: #e2e2e2;
+    padding: 10px 15px;
+    border-radius: 12px;
+    text-align: center;
+    font-weight: bold;
+}
+.label:hover {
+    background: #181818;
+    color: #ffffff;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+.contact-info__list {
+    list-style-type: none;
+    margin: 0;
+    padding: 10px 0;
+}
+.contact-info__item {
+    margin-bottom: 10px;
+}
+.contact-info__link {
+    text-decoration: none;
+    font-weight: bold;
 }
 
 .footer {
