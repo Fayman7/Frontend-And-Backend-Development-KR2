@@ -41,14 +41,17 @@ body {
     text-decoration: none;
     margin: 0;
     padding: 20px 40px;
-    transition: all 0.3s ease;
 }
 .navigation__link:hover {
     background: #ffffff30;
-    transform: translateY(-4px);
+    transition: all 0.3s ease;
 }
-.navigation__link:active {
-    transform: translateY(4px);
+.navigation__current {
+    color: #ffffff;
+    text-decoration: none;
+    margin: 0;
+    padding: 20px 40px;
+    background: #ffffff15;
 }
 
 .content {
@@ -93,6 +96,9 @@ body {
     border: #181818 2px solid;
     border-radius: 20px;
     transition: all 0.5s ease;
+}
+.page-link:active {
+    color: #ffffff;
 }
 
 .footer {
