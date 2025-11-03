@@ -62,6 +62,10 @@ body {
 .about-me, .my-projects, .languages, .contact-info {
     margin-bottom: 30px;
 }
+.additional-languages {
+    text-align: center;
+    font-weight: bold;
+}
 .my-projects__grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -113,6 +117,7 @@ body {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
     margin: 0 20%;
+    padding-left: 0;
     gap: 40px;
     border-bottom: #181818 1px solid;
 }
