@@ -40,7 +40,7 @@ body {
     color: #ffffff;
     text-decoration: none;
     margin: 0;
-    padding: 20px 30px;
+    padding: 20px 40px;
     transition: all 0.3s ease;
 }
 .navigation__link:hover {
@@ -75,10 +75,24 @@ body {
     border-radius: 20px;
     transition: all 0.5s ease;
 }
+.my-projects__image {
+    object-fit: cover;
+    border-radius: 20px;
+    margin: 20px auto;
+}
 .page-link {
+    padding: 10px 15px;
+    border: #e2e2e2 2px solid;
+    border-radius: 8px;
     text-decoration: none;
+    background: #e2e2e2;
     color: #000000;
     font-weight: bold;
+}
+.page-link:hover {
+    border: #181818 2px solid;
+    border-radius: 20px;
+    transition: all 0.5s ease;
 }
 
 .footer {
