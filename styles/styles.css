@@ -78,13 +78,18 @@ body {
     border-radius: 20px;
     transition: all 0.5s ease;
 }
+.my-projects__project-title {
+    display: flex;
+    gap: 20px;
+    border-bottom: #181818 1px solid;
+}
 .my-projects__image {
-    max-width: 50%;
+    max-width: 20%;
     aspect-ratio: 1 / 1;
     object-fit: cover;
-    border-radius: 20px;
-    margin: 20px auto;
-    padding-left: 20px;
+    border-radius: 16px;
+    margin: 10px auto;
+    margin-right: 0px;
 }
 .page-link {
     padding: 10px 15px;
@@ -130,6 +135,7 @@ body {
     margin-bottom: 10px;
 }
 .contact-info__link {
+    color: #000000;
     text-decoration: none;
     font-weight: bold;
 }
