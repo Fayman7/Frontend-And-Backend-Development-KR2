@@ -3,69 +3,50 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Семестровая работа</title>
-
+        <title>Мой первый веб-сайт</title>
         <link rel="stylesheet" href="styles/styles.css">
-        <link rel="icon" href="assets/logo.ico" type="image/x-icon">
-        <script scr="main.js" defer></script>
     </head>
-
     <body>
         <div class="page-container">
-
             <header class="header">
-                <h1>[Логотип]</h1>
-                <p>Имя Студента</p>
+                <h1>Добро пожаловать на мой сайт</h1>
             </header>
 
-            <nav class="nav">
-                <ul class="nav__list">
-                    <li class="nav__item"><a class="nav__link" href="index.html">[Главная]</a></li>
-                    <li class="nav__item"><a class="nav__link" href="pages/projects.html">[Проекты]</a></li>
-                    <li class="nav__item"><a class="nav__link" href="pages/diary.html">[Дневник]</a></li>
-                    <li class="nav__item"><a class="nav__link" href="pages/contacts.html">[Контакты]</a></li>
+            <nav class="navigation">
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="projects.html">Проекты</a></li>
+                    <li><a href="about.html">Обо мне</a></li>
+                    <li><a href="contacts.html">Контакты</a></li>
                 </ul>
             </nav>
 
             <main class="content">
-                <article class="horizontal-section">
-                    <img class="section__image" src="images/img.png" alt="Фото">
-                    <section class="vertical-section">
-                        <p>Привет! Я студент<br>Факультет ИТ, группа ХX<br>Увлекаюсь веб-разработкой</p>
-                        <a class="section__link" href="index.html">[Скачать резюме]</a></li>
-                    </section>
-                </article>
-                
-                <section class="vertical-section">
-                    <h2>Мои навыки</h2>
-                    <div class="grid">
-                        <div class="grid__tag">HTML/CSS</div>
-                        <div class="grid__tag">JS</div>
-                        <div class="grid__tag">Python</div>
-                        <div class="grid__tag">C#</div>
-                    </div>
+                <section class="about-me">
+                    <h2>Обо мне</h2>
+                    <p>Я начинающий веб-разработчик.<br>НЕ судите строго, пожалуйста.</p>
                 </section>
-                
-                <section class="vertical-section">
-                    <h2>Лучшие проекты</h2>
-                    <section class="horizontal__section">
-                        <div class="section__label">
-                            <p>П1</p>
+                <section class="my-projects">
+                    <h2>Мои проекты</h2>
+                    <div class="my-projects__grid">
+                        <div class="my-projects__project">Проект 1:
+                            <p>Веб-сайт портфолио</p>
                         </div>
-                        <div class="section__label">
-                            <p>П2</p>
+                        <div class="my-projects__project">Проект 2:
+                            <p>Мой телеграм-канал</p>
                         </div>
-                        <div class="section__label">
-                            <p>П3</p>
+                        <div class="my-projects__project">Проект 3:
+                            <p>Мой пока не [ЗАПРЕЩЕННЫЙ В РОССИЙСКОЙ ФЕДЕРАЦИИ] твич</p>
                         </div>
-                    </section>
+                    </div>
+                    <p>Больше проектов вы можете увидеть на странице "проекты"!</p>
+                    <a href="projects.html">Перейти к проектам</a>
                 </section>
             </main>
 
             <footer class="footer">
-                <p>© 2024<a class="footer__link" href="pages/diary.html">Контакты</a></p>
-            </footer>  
-
+                <p>&copy; 2025 Мой первый веб-сайт</p>
+            </footer>
         </div>
     </body>
 </html>
