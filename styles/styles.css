@@ -28,20 +28,19 @@ body {
 .navigation {
     background-color: #333333;
     color: #ffffff;
+    padding: 20px 0;
 }
 .navigation__list {
     list-style-type: none;
     margin: 0;
-    padding: 0;
     display: flex;
     justify-content: center;
-    align-items: center;
-    gap: 10px;
 }
 .navigation__link {
     color: #ffffff;
     text-decoration: none;
-    margin: auto 15px;
+    margin: 0;
+    padding: 20px 30px;
     transition: all 0.3s ease;
 }
 .navigation__link:hover {
@@ -68,14 +67,18 @@ body {
 .my-projects__project {
     background: #e2e2e2;
     padding: 15px;
+    border: #e2e2e2 2px solid;
     border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 .my-projects__project:hover {
     border: #181818 2px solid;
-    border-radius: 16px;
-    transform: translateY(-4px);
-    transition: all 0.3s ease;
+    border-radius: 20px;
+    transition: all 0.5s ease;
+}
+.page-link {
+    text-decoration: none;
+    color: #000000;
+    font-weight: bold;
 }
 
 .footer {
