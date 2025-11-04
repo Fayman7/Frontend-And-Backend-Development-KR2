@@ -12,7 +12,7 @@
             <header class="header">
                 <h1>Мои проекты</h1>
             </header>
-
+<!-- navigation -->
             <nav class="navigation">
                 <ul class="navigation__list">
                     <li class="navigation__item"><a class="navigation__link" href="../index.html">Главная</a></li>
@@ -21,7 +21,7 @@
                     <li class="navigation__item"><a class="navigation__current" href="../pages/contacts.html">Контакты</a></li>
                 </ul>
             </nav>
-
+<!-- content -->
             <main class="content">
                 <section class="contact-info">
                     <h2>Контактная информация</h2>
@@ -34,30 +34,66 @@
                     <p>Пожалуйста, оцените мою работу:
                         <button class="button" id="openModalButton" type="button">Оценить</button>
                     </p>
+                    <p>Ваш отзыв будет помещен в эту рамочку:</p>
+                    <p id="userFeedback" class="feedback"></p>
+                    <p id="userFeedbackComment" class="feedback-comment"></p>
                 </section>
             </main>
-
+<!-- footer -->
             <footer class="footer">
                 <p>&copy; 2025 Мой первый веб-сайт</p>
             </footer>
-
+<!-- modal form -->
             <dialog id="modal">
                 <h1>Оцените, пожалуйста, мою работу</h1>
-                <button class="modal-button" type="submit" value="confirm">ОК</button>
+                <form method="dialog">
+                    <div class="modal__feedback">
+                        <select required name="rating" id="rating">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div>
+                    <div class="modal__feedback">
+                        <label for="text">Как ваши дела?</label>
+                        <input type="text" name="text" id="text" placeholder="Напишите здесь">
+                    </div>
+                    <button class="modal-button" type="submit" value="confirm">ОК</button>
+                </form>
             </dialog>
         </div>
-
+<!-- JS -->
         <script>
-            const openModalButton = document.getElementById('openModalButton');
             const modal = document.getElementById('modal');
-            const okButton = modal.querySelector('button[type="submit"]');
+            const openModalButton = document.getElementById('openModalButton');
+            const form = modal.querySelector('form');
 
             openModalButton.addEventListener('click', () => {
-                if (typeof modal.showModal === 'function') modal.showModal();
-                else modal.setAttribute('open', '');
+                if (typeof modal.showModal === 'function') {
+                    modal.showModal();
+                    document.body.style.overflow = 'hidden';
+                } else {
+                    modal.setAttribute('open', '');
+                }
             });
-            if (okButton) okButton.addEventListener('click', () => modal.close('confirm'));
-        </script>
 
+            modal.addEventListener('close', () => {
+                document.body.style.overflow = '';
+                const output = document.getElementById('userFeedback');
+                const commentOutput = document.getElementById('userFeedbackComment');
+                if (modal.returnValue === 'confirm') {
+                    const data = new FormData(form);
+                    const rating = data.get('rating');
+                    const text = 'Я тоже чувствую себя ' + (data.get('text') || '');
+                    output.textContent = `Спасибо, что оценили мою работу, теперь у моего сайта рейтинг [${rating}]. ${text}`;
+                    output.style.fontWeight = 'bold';
+                    commentOutput.textContent = 'Ваш отзыв, к сожалению, удалится при обновлении страницы или перезаходе на неё, так что, напишите его еще раз, если не сложно)';
+                } else {
+                    output.textContent = 'Вы не оставили оценку(';
+                }
+            });
+        </script>
     </body>
 </html>

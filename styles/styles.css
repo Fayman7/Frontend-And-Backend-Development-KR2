@@ -95,7 +95,7 @@ body {
     margin: 10px auto;
     margin-right: 0px;
 }
-.page-link, .button, .modal-button {
+.page-link, .button {
     border: none;
     padding: 10px 15px;
     border-radius: 8px;
@@ -104,13 +104,13 @@ body {
     color: #000000;
     font-weight: bold;
 }
-.page-link:hover, .button:hover, .modal-button:hover {
+.page-link:hover, .button:hover {
     background: #181818;
     color: #ffffff;
     border-radius: 20px;
     transition: all 0.5s ease;
 }
-.page-link:active, .button:active, .modal-button:active {
+.page-link:active, .button:active {
     color: #181818;
 }
 .label-grid {
@@ -148,10 +148,42 @@ body {
     text-decoration: none;
     font-weight: bold;
 }
+.feedback {
+    border: #181818 4px solid;
+    border-radius: 20px;
+    padding: 20px;
+    white-space: normal;
+    overflow: anywhere;
+    word-break: break-all;
+}
 
 .footer {
     background-color: #333333;
     color: #ffffff;
     text-align: center;
     padding: 10px 0;
+}
+
+.modal__feedback {
+    display: flex;
+    gap: 15px;
+    margin: 15px 10px;
+}
+.modal-button {
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    text-decoration: none;
+    background: #e2e2e2;
+    color: #000000;
+    font-weight: bold;
+}
+.modal-button:hover {
+    background: #181818;
+    color: #ffffff;
+    border-radius: 20px;
+    transition: all 0.5s ease;
+}
+.modal-button:active {
+    color: #181818;
 }
