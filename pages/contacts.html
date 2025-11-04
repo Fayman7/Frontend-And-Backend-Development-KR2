@@ -31,12 +31,33 @@
                         <li class="contact-info__item">Telegram: [НЕДОСТУПНО]</li>
                         <li class="contact-info__item">GitHub: <a class="contact-info__link" href="https://github.com/Fayman7/Frontend-And-Backend-Development-KR2/tree/dev?tab=readme-ov-file">Fayman7</a></li>
                     </ul>
+                    <p>Пожалуйста, оцените мою работу:
+                        <button class="button" id="openModalButton" type="button">Оценить</button>
+                    </p>
                 </section>
             </main>
 
             <footer class="footer">
                 <p>&copy; 2025 Мой первый веб-сайт</p>
             </footer>
+
+            <dialog id="modal">
+                <h1>Оцените, пожалуйста, мою работу</h1>
+                <button class="modal-button" type="submit" value="confirm">ОК</button>
+            </dialog>
         </div>
+
+        <script>
+            const openModalButton = document.getElementById('openModalButton');
+            const modal = document.getElementById('modal');
+            const okButton = modal.querySelector('button[type="submit"]');
+
+            openModalButton.addEventListener('click', () => {
+                if (typeof modal.showModal === 'function') modal.showModal();
+                else modal.setAttribute('open', '');
+            });
+            if (okButton) okButton.addEventListener('click', () => modal.close('confirm'));
+        </script>
+
     </body>
 </html>

@@ -95,22 +95,23 @@ body {
     margin: 10px auto;
     margin-right: 0px;
 }
-.page-link {
+.page-link, .button, .modal-button {
+    border: none;
     padding: 10px 15px;
-    border: #e2e2e2 2px solid;
     border-radius: 8px;
     text-decoration: none;
     background: #e2e2e2;
     color: #000000;
     font-weight: bold;
 }
-.page-link:hover {
-    border: #181818 2px solid;
+.page-link:hover, .button:hover, .modal-button:hover {
+    background: #181818;
+    color: #ffffff;
     border-radius: 20px;
     transition: all 0.5s ease;
 }
-.page-link:active {
-    color: #ffffff;
+.page-link:active, .button:active, .modal-button:active {
+    color: #181818;
 }
 .label-grid {
     list-style-type: none;
