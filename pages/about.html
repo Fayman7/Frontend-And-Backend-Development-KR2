@@ -6,6 +6,16 @@
         <title>Мои проекты</title>
         <link rel="stylesheet" href="../styles/styles.css">
         <link rel="icon" href="../assets/favicon-heart.ico" type="image/x-icon">
+
+        <script>
+        (function(){
+            const STORAGE_KEY = 'site-theme';
+            const saved = localStorage.getItem(STORAGE_KEY);
+            const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const name = (saved === 'light' || saved === 'dark') ? saved : (prefersDark ? 'dark' : 'light');
+            document.documentElement.classList.add(name + '-theme');
+        })();
+        </script>
     </head>
     <body>
         <div class="page-container">
@@ -48,8 +58,41 @@
             </main>
 
             <footer class="footer">
-                <p>&copy; 2025 Мой первый веб-сайт</p>
+                <p>&copy; 2025 Мой первый веб-сайт
+                    <button id="themeToggle" type="button" aria-label="Переключить тему" title="Тема">🌙</button>
+                </p>
             </footer>
         </div>
+
+        <script>
+            (function(){
+            const STORAGE_KEY = 'site-theme';
+            const htmlEl = document.documentElement;
+            const btn = document.getElementById('themeToggle');
+
+            // установить тему (light / dark)
+            function applyTheme(name) {
+                htmlEl.classList.remove('light-theme', 'dark-theme');
+                htmlEl.classList.add(name + '-theme');
+                localStorage.setItem(STORAGE_KEY, name);
+                updateButton(name);
+            }
+
+            function updateButton(name){
+                if (!btn) return;
+                btn.textContent = name === 'dark' ? '☀️' : '🌙';
+                btn.setAttribute('aria-pressed', name === 'dark');
+                btn.title = name === 'dark' ? 'Светлая тема' : 'Тёмная тема';
+            }
+
+            // переключатель
+            if (btn) {
+                btn.addEventListener('click', () => {
+                const isDark = htmlEl.classList.contains('dark-theme');
+                applyTheme(isDark ? 'light' : 'dark');
+                });
+            }
+            })();
+        </script>
     </body>
 </html>
