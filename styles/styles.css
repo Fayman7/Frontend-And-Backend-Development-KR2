@@ -1,219 +1,68 @@
-:root {
-    --background: linear-gradient(45deg, #1a252f, #1d1d2f);
-    --color-main-and-light-text: #ffffff;
-    --color-duo-main: #333333;
-    --color-accent: #e2e2e2;
-    --color-border-and-dark-text: #181818;
-    --color-text: #000000;
-
-    --border-radius: 8px;
-    --border-radius-hover: 20px; 
+html, body {
+    height: 100%;
+    transition: background-color 0.3s, color 0.3s;
 }
-
-.light-theme {
-    --background: linear-gradient(45deg, #1a252f, #1d1d2f);
-    --color-main-and-light-text: #ffffff;
-    --color-duo-main: #333333;
-    --color-accent: #e2e2e2;
-    --color-border-and-dark-text: #181818;
-    --color-text: #000000;
-}
-.dark-theme {
-    --background: linear-gradient(45deg, #f0f0f0, #e0e0e0);
-    --color-main-and-light-text: #000000;
-    --color-duo-main: #7f7f7f;
-    --color-accent: #5f5f5f;
-    --color-border-and-dark-text: #f8f8f8;
-    --color-text: #ffffff;
-}
-
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background: var(--background);
-    min-height: 100vh;
-    color: var(--color-text);
-}
-
-.page-container {
-    max-width: 80%;
-    min-height: 100vh;
-    margin: 0 auto;
-    display: grid;
-    grid-template-rows: auto auto 1fr auto;
-    grid-template-areas:
-        "header"
-        "nav"
-        "main"
-        "footer";
-}
-
-.header {
-    background-color: var(--color-main-and-light-text);
-    padding: 20px;
-    text-align: center;
-}
-
-.navigation {
-    background-color: var(--color-duo-main);
-    color: var(--color-main-and-light-text);
-    padding: 20px 0;
-}
-.navigation__list {
-    list-style-type: none;
-    margin: 0;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    min-height: 100vh;
 }
-.navigation__link {
-    color: var(--color-main-and-light-text);
-    text-decoration: none;
-    margin: 0;
-    padding: 20px 40px;
-}
-.navigation__link:hover {
-    background: #ffffff30;
-    transition: all 0.3s ease;
-}
-.navigation__current {
-    color: var(--color-main-and-light-text);
-    text-decoration: none;
-    margin: 0;
-    padding: 20px 40px;
-    background: #ffffff15;
-}
-
-.content {
+main {
     flex: 1;
-    padding: 20px;
-    background: var(--color-main-and-light-text);
-}
-.about-me, .my-projects, .languages, .contact-info {
-    margin-bottom: 30px;
-}
-.additional-languages {
-    text-align: center;
-    font-weight: bold;
-}
-.my-projects__grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-}
-.my-projects__project {
-    background: var(--color-accent);
-    padding: 15px;
-    border: var(--color-accent) 2px solid;
-    border-radius: var(--border-radius);
-}
-.my-projects__project:hover {
-    border: var(--color-border-and-dark-text) 2px solid;
-    border-radius: var(--border-radius-hover);
-    transition: all 0.5s ease;
-}
-.my-projects__project-title {
-    display: flex;
-    gap: 20px;
-    border-bottom: var(--color-border-and-dark-text) 1px solid;
-}
-.my-projects__image {
-    max-width: 20%;
-    aspect-ratio: 1 / 1;
-    object-fit: cover;
-    border-radius: 16px;
-    margin: 10px auto;
-    margin-right: 0px;
-}
-.page-link, .button {
-    border: none;
-    padding: 10px 15px;
-    border-radius: var(--border-radius);
-    text-decoration: none;
-    background: var(--color-accent);
-    color: #000000;
-    font-weight: bold;
-}
-.page-link:hover, .button:hover {
-    background: var(--color-border-and-dark-text);
-    color: var(--color-main-and-light-text);
-    border-radius: var(--border-radius-hover);
-    transition: all 0.5s ease;
-}
-.page-link:active, .button:active {
-    color: var(--color-border-and-dark-text);
-}
-.label-grid {
-    list-style-type: none;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-    margin: 0 20%;
-    padding-left: 0;
-    gap: 40px;
-    border-bottom: var(--color-border-and-dark-text) 1px solid;
-}
-.label {
-    padding: 10px 15px;
-    margin-bottom: 10px;
-    border-radius: 12px;
-    text-align: center;
-    font-weight: bold;
-}
-.label:hover {
-    background: var(--color-border-and-dark-text);
-    color: var(--color-main-and-light-text);
-    border-radius: var(--border-radius-hover);
-    transition: all 0.3s ease;
-}
-.contact-info__list {
-    list-style-type: none;
-    margin: 0;
-    padding: 10px 0;
-}
-.contact-info__item {
-    margin-bottom: 10px;
-}
-.contact-info__link {
-    color: #000000;
-    text-decoration: none;
-    font-weight: bold;
-}
-.feedback {
-    border: var(--color-border-and-dark-text) 4px solid;
-    border-radius: var(--border-radius-hover);
-    padding: 20px;
-    white-space: normal;
-    overflow: anywhere;
-    word-break: break-all;
 }
 
-.footer {
-    background-color: var(--color-duo-main);
-    color: var(--color-main-and-light-text);
-    text-align: center;
-    padding: 10px 0;
+/* === ЧЁРНО-БЕЛАЯ ТЕМА === */
+body.mono {
+    background-color: #f8f9fa;
+    color: #212529;
 }
+.mono .bg-dark { background-color: #212529 !important; }
+.mono .bg-secondary { background-color: #343a40 !important; }
+.mono .text-white { color: #fff !important; }
+.mono .progress-bar { background-color: #495057 !important; }
+.mono .btn-primary { background-color: #343a40; border-color: #343a40; }
+.mono .btn-primary:hover { background-color: #212529; }
+.mono .card { background-color: #fff; border: 1px solid #dee2e6; }
+.mono .list-group-item { background-color: #fff; border-color: #dee2e6; }
+.mono .badge { background-color: #6c757d !important; }
 
-.modal__feedback {
-    display: flex;
-    gap: 15px;
-    margin: 15px 10px;
+/* === РОЗОВО-ЧЁРНАЯ ТЕМА === */
+body.pink {
+    background-color: #1a1a1a;
+    color: #f8d7da;
 }
-.modal-button {
+.pink .bg-dark { background-color: #2d1b69 !important; }
+.pink .bg-secondary { background-color: #3d1f7a !important; }
+.pink .text-white { color: #fff !important; }
+.pink .progress-bar { background-color: #e91e63 !important; }
+.pink .btn-primary { background-color: #e91e63; border-color: #e91e63; }
+.pink .btn-primary:hover { background-color: #c2185b; }
+.pink .card { background-color: #2d1b69; border: 1px solid #4a2c8a; color: #f8d7da; }
+.pink .list-group-item { background-color: #3d1f7a; border-color: #4a2c8a; color: #f8d7da; }
+.pink .badge { background-color: #e91e63 !important; }
+.pink a { color: #ff80ab; }
+.pink a:hover { color: #ff6090; }
+
+/* === КНОПКА ПЕРЕКЛЮЧЕНИЯ === */
+.theme-toggle {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 1050;
+    background: rgba(0,0,0,0.7);
     border: none;
-    padding: 10px 15px;
-    border-radius: var(--border-radius);
-    text-decoration: none;
-    background: var(--color-accent);
-    color: #000000;
-    font-weight: bold;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    color: white;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    transition: all 0.3s;
 }
-.modal-button:hover {
-    background: var(--color-border-and-dark-text);
-    color: var(--color-main-and-light-text);
-    border-radius: var(--border-radius-hover);
-    transition: all 0.5s ease;
-}
-.modal-button:active {
-    color: var(--color-border-and-dark-text);
+.theme-toggle:hover {
+    transform: scale(1.1);
 }

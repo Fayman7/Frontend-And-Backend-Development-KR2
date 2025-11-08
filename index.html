@@ -3,95 +3,135 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Мой первый веб-сайт</title>
+        <title>Личное портфолио — Главная</title>
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
         <link rel="stylesheet" href="styles/styles.css">
-        <link rel="icon" href="assets/favicon-heart.ico" type="image/x-icon">
-
-        <script>
-        (function(){
-            const STORAGE_KEY = 'site-theme';
-            const saved = localStorage.getItem(STORAGE_KEY);
-            const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-            const name = (saved === 'light' || saved === 'dark') ? saved : (prefersDark ? 'dark' : 'light');
-            document.documentElement.classList.add(name + '-theme');
-        })();
-        </script>
     </head>
-    <body>
-        <div class="page-container">
-            <header class="header">
-                <h1>Добро пожаловать на мой сайт</h1>
-            </header>
+    <body class="mono d-flex flex-column min-vh-100">
 
-            <nav class="navigation">
-                <ul class="navigation__list">
-                    <li class="navigation__item"><a class="navigation__current" href="index.html">Главная</a></li>
-                    <li class="navigation__item"><a class="navigation__link" href="pages/projects.html">Проекты</a></li>
-                    <li class="navigation__item"><a class="navigation__link" href="pages/about.html">Обо мне</a></li>
-                    <li class="navigation__item"><a class="navigation__link" href="pages/contacts.html">Контакты</a></li>
-                </ul>
-            </nav>
+<!-- ХЕДЕР-->
+        <header class="bg-dark text-white py-3">
+            <div class="container text-center">
+                <h1 class="h4 mb-0">Мерзликин Иван</h1>
+            </div>
+        </header>
 
-            <main class="content">
-                <section class="about-me">
-                    <h2>Обо мне</h2>
-                    <p>Я начинающий веб-разработчик.<br>Не судите строго, пожалуйста(bless).</p>
-                    <p>Информация для преподавателя: &copy; Мерзликин Иван Адреевич, ЭФБО-17-24</p>
-                </section>
-                <section class="my-projects">
-                    <h2>Мои проекты</h2>
-                    <div class="my-projects__grid">
-                        <div class="my-projects__project">Проект 1:
-                            <p>Веб-сайт портфолио</p>
+        <button class="theme-toggle" id="themeToggle" title="Сменить тему">
+            <i class="bi bi-moon-stars-fill"></i>
+        </button>
+
+<!-- НАВИГАЦИЯ -->
+        <nav class="bg-secondary text-white py-2">
+            <div class="container">
+                <div class="d-flex justify-content-center gap-4 flex-wrap">
+                    <a href="index.html" class="text-white text-decoration-none">Главная</a>
+                    <a href="pages/projects.html" class="text-white text-decoration-none">Проекты</a>
+                    <a href="pages/diary.html" class="text-white text-decoration-none">Дневник</a>
+                    <a href="pages/contacts.html" class="text-white text-decoration-none">Контакты</a>
+                </div>
+            </div>
+        </nav>
+
+<!-- СОДЕРЖИМОЕ СТРАНИЦЫ -->
+        <main class="container my-5 flex-grow-1">
+            <section class="text-center mb-5">
+                <div class="row justify-content-center">
+                    <div class="col-md-6 col-lg-5">
+                        <img src="images/picture.png" alt="Фото студента" class="rounded-circle img-fluid mb-4" style="width: 200px;">
+                        <h2 class="mb-3">Мерзликин Иван Андреевич ЭФБО-17-24</h2>
+                        <p class="lead mb-4"> мне 18 годиков</p>
+                        <a href="assets/myResume.pdf" download class="btn btn-primary">Скачать резюме</a>
+                    </div>
+                </div>
+            </section>
+            <section class="mb-5">
+                <h2 class="text-center mb-4">Мои навыки</h2>
+                <div class="row g-3">
+                    <div class="col-12">
+                        <div class="d-flex justify-content-between mb-1">
+                            <span>HTML/CSS</span>
+                            <span>90%</span>
                         </div>
-                        <div class="my-projects__project">Проект 2:
-                            <p>Мой телеграм-канал</p>
-                        </div>
-                        <div class="my-projects__project">Проект 3:
-                            <p>Мой пока не [ЗАПРЕЩЕННЫЙ В РОССИЙСКОЙ ФЕДЕРАЦИИ] твич</p>
+                        <div class="progress" style="height: 2rem;">
+                            <div class="progress-bar bg-success" style="width: 90%;">90%</div>
                         </div>
                     </div>
-                    <p>Больше проектов вы можете увидеть на странице "Проекты"!</p>
-                    <a class="page-link" href="pages/projects.html">Перейти к проектам</a>
-                </section>
-            </main>
+                    <div class="col-12">
+                        <div class="d-flex justify-content-between mb-1">
+                            <span>JavaScript</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="progress" style="height: 2rem;">
+                            <div class="progress-bar bg-info" style="width: 80%;">80%</div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="d-flex justify-content-between mb-1">
+                            <span>Bootstrap</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="progress" style="height: 2rem;">
+                            <div class="progress-bar bg-warning" style="width: 85%;">85%</div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="d-flex justify-content-between mb-1">
+                            <span>C#</span>
+                            <span>60%</span>
+                        </div>
+                        <div class="progress" style="height: 2rem;">
+                            <div class="progress-bar bg-danger" style="width: 60%;">60%</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <h2 class="text-center mb-4">Лучшие проекты</h2>
+                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                    <div class="col">
+                        <div class="card h-100">
+                            <img src="images/picture.png" class="card-img-top" alt="Личный сайт" style="height: 180px; object-fit: cover;">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">Личный сайт</h5>
+                                <p class="card-text text-muted small">HTML, CSS</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100">
+                            <img src="images/picture.png" class="card-img-top" alt="Todo-приложение" style="height: 180px; object-fit: cover;">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">Todo-приложение</h5>
+                                <p class="card-text text-muted small">JavaScript</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100">
+                            <img src="images/picture.png" class="card-img-top" alt="Desktop-приложение" style="height: 180px; object-fit: cover;">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">Desktop-приложение</h5>
+                                <p class="card-text text-muted small">C#, WinForms</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
 
-            <footer class="footer">
-                <p>&copy; 2025 Мой первый веб-сайт
-                    <button id="themeToggle" type="button" aria-label="Переключить тему" title="Тема">🌙</button>
-                </p>
-            </footer>
-        </div>
+<!-- ФУТЕР -->
+        <footer class="bg-dark text-white mt-auto">
+            <div class="container py-3 text-center">
+                <p class="mb-0">© 2025 Мерзликин Иван Андреевич.</p>
+            </div>
+        </footer>
 
-        <script>
-            (function(){
-            const STORAGE_KEY = 'site-theme';
-            const htmlEl = document.documentElement;
-            const btn = document.getElementById('themeToggle');
-
-            // установить тему (light / dark)
-            function applyTheme(name) {
-                htmlEl.classList.remove('light-theme', 'dark-theme');
-                htmlEl.classList.add(name + '-theme');
-                localStorage.setItem(STORAGE_KEY, name);
-                updateButton(name);
-            }
-
-            function updateButton(name){
-                if (!btn) return;
-                btn.textContent = name === 'dark' ? '☀️' : '🌙';
-                btn.setAttribute('aria-pressed', name === 'dark');
-                btn.title = name === 'dark' ? 'Светлая тема' : 'Тёмная тема';
-            }
-
-            // переключатель
-            if (btn) {
-                btn.addEventListener('click', () => {
-                const isDark = htmlEl.classList.contains('dark-theme');
-                applyTheme(isDark ? 'light' : 'dark');
-                });
-            }
-            })();
-        </script>
+<!-- JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="scripts/main.js"></script>
+        <script src="scripts/theme.js"></script>
+        
     </body>
 </html>

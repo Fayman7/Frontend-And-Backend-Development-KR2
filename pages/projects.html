@@ -3,100 +3,107 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Мои проекты</title>
+        <title>Личное портфолио — Проекты</title>
         <link rel="stylesheet" href="../styles/styles.css">
-        <link rel="icon" href="../assets/favicon-heart.ico" type="image/x-icon">
-
-        <script>
-        (function(){
-            const STORAGE_KEY = 'site-theme';
-            const saved = localStorage.getItem(STORAGE_KEY);
-            const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-            const name = (saved === 'light' || saved === 'dark') ? saved : (prefersDark ? 'dark' : 'light');
-            document.documentElement.classList.add(name + '-theme');
-        })();
-        </script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
     </head>
-    <body>
-        <div class="page-container">
-            <header class="header">
-                <h1>Мои проекты</h1>
-            </header>
+    <body class="d-flex flex-column min-vh-100">
+        
+<!-- ХЕДЕР -->
+        <header class="bg-dark text-white py-3">
+            <div class="container text-center">
+                <h1 class="h4 mb-0">Мерзликин Иван</h1>
+            </div>
+        </header>
 
-            <nav class="navigation">
-                <ul class="navigation__list">
-                    <li class="navigation__item"><a class="navigation__link" href="../index.html">Главная</a></li>
-                    <li class="navigation__item"><a class="navigation__current" href="../pages/projects.html">Проекты</a></li>
-                    <li class="navigation__item"><a class="navigation__link" href="../pages/about.html">Обо мне</a></li>
-                    <li class="navigation__item"><a class="navigation__link" href="../pages/contacts.html">Контакты</a></li>
-                </ul>
-            </nav>
+        <button class="theme-toggle" id="themeToggle" title="Сменить тему">
+            <i class="bi bi-moon-stars-fill"></i>
+        </button>
 
-            <main class="content">
-                <section class="my-projects">
-                    <h2>Проекты</h2>
-                    <div class="my-projects__grid">
-                        <div class="my-projects__project">Проект 1:
-                            <div class="my-projects__project-title">
-                                <h4>Веб-сайт портфолио</h4>
-                                <img class="my-projects__image" src="../images/img-website.png" alt="Картинка портфолио">
-                            </div>
-                            <p>Это то, где вы сейчас находитесь</p>
-                        </div>
-                        <div class="my-projects__project">Проект 2:
-                            <div class="my-projects__project-title">
-                                <h4>Мой телеграм-канал</h4>
-                                <img class="my-projects__image" src="../images/img-telegram.png" alt="Картинка телеграмма">
-                            </div>
-                            <p>Это мой телеграм-канал, где я делюсь новостями и обновлениями. Там вы найдете много интересного!<br>(пока не найдете, его нет, но я его создам, обещаю!)</p>
-                        </div>
-                        <div class="my-projects__project">Проект 3:
-                            <div class="my-projects__project-title">
-                                <h4>Мой пока не [ЗАПРЕЩЕННЫЙ В РОССИЙСКОЙ ФЕДЕРАЦИИ] твич</h4>
-                                <img class="my-projects__image" src="../images/img-twitch.png" alt="Картинка твича">
-                            </div>
-                            <p>Иногда пытаюсь стримить, но пока нет.</p>
+<!-- НАВИГАЦИЯ -->
+        <nav class="bg-secondary text-white py-2">
+            <div class="container">
+                <div class="d-flex justify-content-center gap-4 flex-wrap">
+                    <a href="../index.html" class="text-white text-decoration-none">Главная</a>
+                    <a href="../pages/projects.html" class="text-white text-decoration-none">Проекты</a>
+                    <a href="../pages/diary.html" class="text-white text-decoration-none">Дневник</a>
+                    <a href="../pages/contacts.html" class="text-white text-decoration-none">Контакты</a>
+                </div>
+            </div>
+        </nav>
+
+<!-- СОДЕРЖИМОЕ СТРАНИЦЫ -->
+        <main class="container my-5">
+            <h2>Мои проекты</h2>
+            <div class="btn-group mb-4" role="group">
+                <button type="button" class="btn btn-primary active" data-filter="all">Все</button>
+                <button type="button" class="btn btn-outline-primary" data-filter="html">HTML</button>
+                <button type="button" class="btn btn-outline-primary" data-filter="js">JS</button>
+                <button type="button" class="btn btn-outline-primary" data-filter="csharp">C#</button>
+            </div>
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4" id="project-grid">
+                <div class="col" data-tech="html">
+                    <div class="card h-100">
+                        <img src="../images/picture.png" class="card-img-top" alt="Личный сайт">
+                        <div class="card-body">
+                            <h5 class="card-title">Личный сайт</h5>
+                            <p class="card-text">HTML, CSS</p>
+                            <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#projectModal" data-title="Личный сайт" data-desc="Полноценный статический сайт с адаптивной версткой.">Подробнее</button>
                         </div>
                     </div>
-                </section>
-            </main>
+                </div>
+                <div class="col" data-tech="js">
+                    <div class="card h-100">
+                        <img src="../images/picture.png" class="card-img-top" alt="Todo">
+                        <div class="card-body">
+                            <h5 class="card-title">Todo-приложение</h5>
+                            <p class="card-text">JavaScript</p>
+                            <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#projectModal" data-title="Todo-приложение" data-desc="Интерактивное приложение с localStorage.">Подробнее</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col" data-tech="csharp">
+                    <div class="card h-100">
+                        <img src="../images/picture.png" class="card-img-top" alt="Desktop App">
+                        <div class="card-body">
+                            <h5 class="card-title">Desktop-приложение</h5>
+                            <p class="card-text">C#, WinForms</p>
+                            <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#projectModal"
+                                    data-title="Desktop-приложение" data-desc="Калькулятор с GUI на C# и WinForms.">Подробнее</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
 
-            <footer class="footer">
-                <p>&copy; 2025 Мой первый веб-сайт
-                    <button id="themeToggle" type="button" aria-label="Переключить тему" title="Тема">🌙</button>
-                </p>
-            </footer>
+<!-- Модальное окно -->
+        <div class="modal fade" id="projectModal" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Детали проекта</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p id="modal-desc">Описание появится здесь</p>
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <script>
-            (function(){
-            const STORAGE_KEY = 'site-theme';
-            const htmlEl = document.documentElement;
-            const btn = document.getElementById('themeToggle');
+<!-- ФУТЕР -->
+        <footer class="bg-dark text-white mt-auto">
+            <div class="container py-3 text-center">
+                <p class="mb-0">© 2025 Мерзликин Иван Андреевич.</p>
+            </div>
+        </footer>
 
-            // установить тему (light / dark)
-            function applyTheme(name) {
-                htmlEl.classList.remove('light-theme', 'dark-theme');
-                htmlEl.classList.add(name + '-theme');
-                localStorage.setItem(STORAGE_KEY, name);
-                updateButton(name);
-            }
+<!-- JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="../scripts/filters.js"></script>
+        <script src="../scripts/modal.js"></script>
+        <script src="../scripts/theme.js"></script>
 
-            function updateButton(name){
-                if (!btn) return;
-                btn.textContent = name === 'dark' ? '☀️' : '🌙';
-                btn.setAttribute('aria-pressed', name === 'dark');
-                btn.title = name === 'dark' ? 'Светлая тема' : 'Тёмная тема';
-            }
-
-            // переключатель
-            if (btn) {
-                btn.addEventListener('click', () => {
-                const isDark = htmlEl.classList.contains('dark-theme');
-                applyTheme(isDark ? 'light' : 'dark');
-                });
-            }
-            })();
-        </script>
     </body>
 </html>
