@@ -170,7 +170,8 @@ fieldset {
 }
 
 .nav__item--active .nav__link {
-    background: rgba(255, 255, 255, 0.2);
+    background: var(--bg-card);
+    color: var(--text-primary);
     font-weight: 600;
 }
 
